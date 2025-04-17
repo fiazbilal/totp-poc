@@ -48,3 +48,23 @@ go mod tidy
 ```bash
 go run main.go
 ```
+
+Server will start at: http://localhost:3000
+
+## Test
+
+### Register
+
+```bash
+curl -X POST http://localhost:3000/register \
+  -H "Content-Type: application/json" \
+  -d '{"email": "user@example.com"}' | jq -r '.qr_base64' | base64 -d > qr.png
+```
+
+### Verify
+
+```bash
+curl -X POST http://localhost:3000/verify  
+    -H "Content-Type: application/json"
+    -d '{"email": "user@example.com", "code": "481432"}'
+```
