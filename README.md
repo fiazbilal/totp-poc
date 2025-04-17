@@ -53,7 +53,7 @@ Server will start at: http://localhost:3000
 
 ## Test
 
-### Register
+### 1. Register
 
 ```bash
 curl -X POST http://localhost:3000/register \
@@ -61,7 +61,7 @@ curl -X POST http://localhost:3000/register \
   -d '{"email": "user@example.com"}' | jq -r '.qr_base64' | base64 -d > qr.png
 ```
 
-### Verify
+### 2. Verify
 
 ```bash
 curl -X POST http://localhost:3000/verify  
